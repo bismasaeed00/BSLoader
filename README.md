@@ -14,3 +14,14 @@ To show:
  ```
  [[BSLoader sharedInstance] hideLoader:loader];
  ```
+## Customize:
+To change default circle size, call this line with your value anywhere before showing loader.
+
+```
+[[BSLoader sharedInstance] setDefaultCircleSize:10];
+```
+By default, loader will show at the center of screen. But you can specify it's rectanlge by using this:
+```
+BSLoadingView*loader=[[BSLoader sharedInstance] showLoaderInframe:CGRectMake(100, 100, 200, 200)];
+```
+
