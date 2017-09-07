@@ -12,9 +12,12 @@
 
 @interface BSLoader : NSObject
 +(BSLoader*)sharedInstance;
+-(void)setDefaultCircleSize:(float)size;
 
 #pragma mark - Initializers
 -(BSLoadingView*)showLoader;
+-(BSLoadingView*)showLoaderInframe:(CGRect)frame;
 -(void)hideLoader:(BSLoadingView*)loader;
+
 
 @end

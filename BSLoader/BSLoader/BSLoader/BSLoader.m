@@ -12,13 +12,16 @@
     UIWindow *alertWindow;
 }
 static BSLoader* _sharedInstance = nil;
+static float circleSize;
 
 +(BSLoader*)sharedInstance
 {
     @synchronized([BSLoader class])
     {
-        if (!_sharedInstance)
+        if (!_sharedInstance){
             _sharedInstance = [[self alloc] init];
+            circleSize=15;
+        }
         
         return _sharedInstance;
     }
@@ -34,7 +37,13 @@ static BSLoader* _sharedInstance = nil;
     
     float y=([UIScreen mainScreen].bounds.size.height-20)*0.5;
     
-    BSLoadingView *loaderView=[[BSLoadingView alloc] initWithFrame:CGRectMake(x, y, size, 20)];
+    CGRect frame=CGRectMake(x, y, size, circleSize+5);
+    
+    return [self showLoaderInframe:frame];
+}
+-(BSLoadingView*)showLoaderInframe:(CGRect)frame{
+    
+    BSLoadingView *loaderView=[[BSLoadingView alloc] initWithFrame:frame circleSize:circleSize];
     BSLoaderRootViewContoller *rootVC=[[BSLoaderRootViewContoller alloc] initWithNibName:@"BSLoaderRootViewContoller" bundle:[NSBundle mainBundle]];
     [rootVC.view addSubview:loaderView];
     
@@ -49,7 +58,7 @@ static BSLoader* _sharedInstance = nil;
     alertWindow.rootViewController = rootVC;
     [alertWindow makeKeyAndVisible];
     
-   
+    
     return loaderView;
 }
 -(void)hideLoader:(BSLoadingView *)loader{
@@ -57,6 +66,11 @@ static BSLoader* _sharedInstance = nil;
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     alertWindow.hidden=YES;
     alertWindow=nil;
+}
+
+-(void)setDefaultCircleSize:(float)size{
+    
+    circleSize=size;
 }
 
 @end

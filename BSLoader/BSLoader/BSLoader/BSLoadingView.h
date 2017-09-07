@@ -12,6 +12,7 @@
 
 -(id)init;
 -(id)initWithFrame:(CGRect)frame;
+-(id)initWithFrame:(CGRect)frame circleSize:(float)circleSize;
 
 @property (nonatomic,strong) CAShapeLayer *circleLayerOne;
 @property (nonatomic,strong) CAShapeLayer *circleLayerTwo;

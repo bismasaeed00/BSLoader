@@ -18,19 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [[BSLoader sharedInstance] setDefaultCircleSize:10];
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)loaderShowPressed:(id)sender {
 
-    BSLoadingView*loader=[[BSLoader sharedInstance] showLoader];
+    BSLoadingView*loader=[[BSLoader sharedInstance] showLoaderInframe:CGRectMake(100, 100, 200, 200)];
     
     [NSTimer scheduledTimerWithTimeInterval:5.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
         

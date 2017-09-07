@@ -21,7 +21,7 @@ alpha:1.0]
     if (self=[super init]) {
         
         self.frame=CGRectMake(20, 20, 20, 20);
-        [self initializeLoadingView];
+        [self initializeLoadingView:15];
     }
     return self;
 }
@@ -30,34 +30,43 @@ alpha:1.0]
     if (self=[super initWithFrame:frame]) {
         
         self.frame=frame;
-        [self initializeLoadingView];
+        [self initializeLoadingView:15];
     }
     return self;
 }
--(void)initializeLoadingView{
+-(id)initWithFrame:(CGRect)frame circleSize:(float)circleSize{
+    
+    if (self=[super initWithFrame:frame]) {
+        
+        self.frame=frame;
+        [self initializeLoadingView:circleSize];
+    }
+    return self;
+}
+-(void)initializeLoadingView:(float)circleSize{
     
     _circleLayerOne = [CAShapeLayer layer];
-    [_circleLayerOne setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 15, 15)] CGPath]];
+    [_circleLayerOne setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, circleSize, circleSize)] CGPath]];
     _circleLayerOne.fillColor=[UIColor clearColor].CGColor;
     [[self layer] addSublayer:_circleLayerOne];
     
     _circleLayerTwo = [CAShapeLayer layer];
-    [_circleLayerTwo setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(20, 0, 15, 15)] CGPath]];
+    [_circleLayerTwo setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(circleSize+5, 0, circleSize, circleSize)] CGPath]];
     _circleLayerTwo.fillColor=[UIColor clearColor].CGColor;
     [[self layer] addSublayer:_circleLayerTwo];
     
     _circleLayerThree = [CAShapeLayer layer];
-    [_circleLayerThree setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(40, 0, 15, 15)] CGPath]];
+    [_circleLayerThree setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake((circleSize+5)*2, 0, circleSize, circleSize)] CGPath]];
     _circleLayerThree.fillColor=[UIColor clearColor].CGColor;
     [[self layer] addSublayer:_circleLayerThree];
     
     _circleLayerFour = [CAShapeLayer layer];
-    [_circleLayerFour setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(60, 0, 15, 15)] CGPath]];
+    [_circleLayerFour setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake((circleSize+5)*3, 0, circleSize, circleSize)] CGPath]];
     _circleLayerFour.fillColor=[UIColor clearColor].CGColor;
     [[self layer] addSublayer:_circleLayerFour];
     
     _circleLayerFive = [CAShapeLayer layer];
-    [_circleLayerFive setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(80, 0, 15, 15)] CGPath]];
+    [_circleLayerFive setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake((circleSize+5)*4, 0, circleSize, circleSize)] CGPath]];
     _circleLayerFive.fillColor=[UIColor clearColor].CGColor;
     [[self layer] addSublayer:_circleLayerFive];
 
