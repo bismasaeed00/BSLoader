@@ -13,6 +13,7 @@
 @interface BSLoader : NSObject
 +(BSLoader*)sharedInstance;
 -(void)setDefaultCircleSize:(float)size;
+-(void)setColorScheme:(NSInteger)colorSheme;
 
 #pragma mark - Initializers
 -(BSLoadingView*)showLoader;

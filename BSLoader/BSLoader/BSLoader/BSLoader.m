@@ -13,6 +13,7 @@
 }
 static BSLoader* _sharedInstance = nil;
 static float circleSize;
+static BSColorScheme colorScheme;
 
 +(BSLoader*)sharedInstance
 {
@@ -43,7 +44,8 @@ static float circleSize;
 }
 -(BSLoadingView*)showLoaderInframe:(CGRect)frame{
     
-    BSLoadingView *loaderView=[[BSLoadingView alloc] initWithFrame:frame circleSize:circleSize];
+    BSLoadingView *loaderView=[[BSLoadingView alloc] initWithFrame:frame circleSize:circleSize colorScheme:colorScheme];
+    
     BSLoaderRootViewContoller *rootVC=[[BSLoaderRootViewContoller alloc] initWithNibName:@"BSLoaderRootViewContoller" bundle:[NSBundle mainBundle]];
     [rootVC.view addSubview:loaderView];
     
@@ -71,6 +73,11 @@ static float circleSize;
 -(void)setDefaultCircleSize:(float)size{
     
     circleSize=size;
+    
+}
+-(void)setColorScheme:(BSColorScheme)scheme{
+    
+    colorScheme=scheme;
 }
 
 @end

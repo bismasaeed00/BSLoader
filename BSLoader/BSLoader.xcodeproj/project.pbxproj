@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E5582211F8B421300980FCA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4E60DE721F3988A200D26B9E /* BSLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E60DE761F3988A200D26B9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E60DE781F3988A200D26B9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 				4E60DE931F39904A00D26B9E /* BSLoaderRootViewContoller.h */,
 				4E60DE941F39904A00D26B9E /* BSLoaderRootViewContoller.m */,
 				4E60DE951F39904A00D26B9E /* BSLoaderRootViewContoller.xib */,
+				4E5582211F8B421300980FCA /* Header.h */,
 			);
 			path = BSLoader;
 			sourceTree = "<group>";

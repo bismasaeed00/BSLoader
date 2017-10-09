@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Header.h"
 
 @interface BSLoadingView : UIView<CAAnimationDelegate>
 
 -(id)init;
 -(id)initWithFrame:(CGRect)frame;
--(id)initWithFrame:(CGRect)frame circleSize:(float)circleSize;
+-(id)initWithFrame:(CGRect)frame circleSize:(float)circleSize colorScheme:(BSColorScheme)scheme;
 
 @property (nonatomic,strong) CAShapeLayer *circleLayerOne;
 @property (nonatomic,strong) CAShapeLayer *circleLayerTwo;

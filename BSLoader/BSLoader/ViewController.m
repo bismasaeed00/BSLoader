@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     [[BSLoader sharedInstance] setDefaultCircleSize:10];
+  //  [[BSLoader sharedInstance] setColorScheme:BSColorSchemeFive];
     
 }
 
